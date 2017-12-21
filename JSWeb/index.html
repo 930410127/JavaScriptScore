@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Contentt-Type" content="text/html;charset  =UTF-8">
+	<meta name="viewport" content="width = device-width; initial-scale=1.0">
+	<title>OC与JS的交互</title>
+	<script>
+		function buttonClick(argument) {
+			log("hello jess")
+		}
+		var call = function(){
+			var callInfo = JSON.stringify({"jianshu":"http://www.jianshu.com/users/55c8fdc3c6e7/latest_articles"});
+			tianbai.getCall(callInfo);
+		}
+
+		var callBack = function(str){
+			alert(str);
+		}
+
+		var alertCallBack = function(){
+			alert('回调web成功');
+		}
+	</script>
+</head>
+<body>
+	<button id = "hello" onclick="buttonClick()">点击button</button>
+	<div>
+		<input type="button" value="通过对象唤起本地方法(call)" onclick="tianbai.call()">
+		</div>
+		<div><input type="button" value="唤起对象的getCall:(NSString *)callString传值" onclick="call()"></div>
+        <div><input type = "button" value= "通过获取JS唤起OC方法" onclick = "callBack('Hello,Jess!')"></div>
+</body>
+</html>
